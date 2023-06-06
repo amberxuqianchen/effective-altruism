@@ -4,7 +4,7 @@ test_function.html
 test_function.ipynb
 test*
 # ignore data files for the time being
-0_data/
+0_data/combined*
 
 # History files
 .Rhistory
