@@ -1,0 +1,380 @@
+
+Model Info:
+ function:     stan_lmer
+ family:       gaussian [identity]
+ formula:      pos ~ moral + agency + (1 | participant_ID)
+ algorithm:    sampling
+ sample:       4000 (posterior sample size)
+ priors:       see help('prior_summary')
+ observations: 1223
+ groups:       participant_ID (166)
+
+Estimates:
+                                                mean   sd    2.5%   97.5%
+(Intercept)                                    1.24   0.06  1.13   1.34  
+moral                                          0.39   0.02  0.34   0.43  
+agencyOther                                   -0.06   0.05 -0.16   0.05  
+b[(Intercept) participant_ID:12]              -0.05   0.25 -0.55   0.44  
+b[(Intercept) participant_ID:12303am]         -0.88   0.33 -1.54  -0.25  
+b[(Intercept) participant_ID:20903IN]         -0.04   0.45 -0.88   0.82  
+b[(Intercept) participant_ID:35T28GA]          0.19   0.17 -0.14   0.53  
+b[(Intercept) participant_ID:62n26th]         -0.57   0.17 -0.91  -0.24  
+b[(Intercept) participant_ID:63r79ch]          0.59   0.26  0.11   1.10  
+b[(Intercept) participant_ID:77t02vo]          0.32   0.43 -0.52   1.19  
+b[(Intercept) participant_ID:892]             -0.11   0.42 -0.93   0.72  
+b[(Intercept) participant_ID:AGU12IN]         -0.33   0.34 -1.01   0.33  
+b[(Intercept) participant_ID:ALL21AL]          0.26   0.34 -0.40   0.91  
+b[(Intercept) participant_ID:ALU07TH]         -0.71   0.17 -1.05  -0.38  
+b[(Intercept) participant_ID:AND10WN]          0.64   0.20  0.26   1.04  
+b[(Intercept) participant_ID:ASH04FF]          0.10   0.17 -0.23   0.42  
+b[(Intercept) participant_ID:bag20ki]         -0.06   0.43 -0.91   0.76  
+b[(Intercept) participant_ID:Bag20ki]         -0.19   0.24 -0.68   0.28  
+b[(Intercept) participant_ID:BAR02LE]         -0.50   0.44 -1.38   0.33  
+b[(Intercept) participant_ID:Bar17ng]          0.38   0.34 -0.29   1.05  
+b[(Intercept) participant_ID:BAR17ng]          0.32   0.31 -0.30   0.94  
+b[(Intercept) participant_ID:BEC05ON]         -0.60   0.39 -1.40   0.15  
+b[(Intercept) participant_ID:BEE23AN]          0.07   0.32 -0.53   0.70  
+b[(Intercept) participant_ID:BEN20FF]         -0.36   0.38 -1.11   0.37  
+b[(Intercept) participant_ID:BEN29ER]         -0.17   0.38 -0.91   0.56  
+b[(Intercept) participant_ID:BER28MS]         -0.64   0.20 -1.04  -0.23  
+b[(Intercept) participant_ID:BIR05OD]          0.59   0.17  0.26   0.92  
+b[(Intercept) participant_ID:Bit23ly]          0.62   0.38 -0.12   1.38  
+b[(Intercept) participant_ID:BIT23ly]          0.25   0.38 -0.49   1.01  
+b[(Intercept) participant_ID:BIT23LY]          0.73   0.25  0.24   1.22  
+b[(Intercept) participant_ID:BIT28BE]          0.07   0.18 -0.27   0.42  
+b[(Intercept) participant_ID:BRI04LE]          0.17   0.24 -0.30   0.63  
+b[(Intercept) participant_ID:BRO08WE]         -0.29   0.35 -0.99   0.41  
+b[(Intercept) participant_ID:Bro13on]          0.11   0.33 -0.51   0.75  
+b[(Intercept) participant_ID:BRO13ON]          0.21   0.43 -0.62   1.03  
+b[(Intercept) participant_ID:Bro28oy]         -0.14   0.34 -0.80   0.52  
+b[(Intercept) participant_ID:BRO29HA]         -0.13   0.28 -0.66   0.41  
+b[(Intercept) participant_ID:BUT07ON]         -0.15   0.17 -0.49   0.18  
+b[(Intercept) participant_ID:BYA05EN]         -0.40   0.38 -1.14   0.36  
+b[(Intercept) participant_ID:cal02sa]         -0.32   0.43 -1.16   0.51  
+b[(Intercept) participant_ID:Cal02sa]          0.15   0.38 -0.59   0.88  
+b[(Intercept) participant_ID:CAR03ES]         -0.65   0.27 -1.19  -0.13  
+b[(Intercept) participant_ID:CHE06NG]         -0.05   0.15 -0.33   0.24  
+b[(Intercept) participant_ID:CHU23OR]          0.04   0.18 -0.33   0.39  
+b[(Intercept) participant_ID:cli10an]         -0.75   0.29 -1.31  -0.19  
+b[(Intercept) participant_ID:COL19EY]          0.55   0.22  0.11   0.96  
+b[(Intercept) participant_ID:Con09rd]          0.56   0.18  0.21   0.90  
+b[(Intercept) participant_ID:COP24HU]          0.53   0.16  0.22   0.84  
+b[(Intercept) participant_ID:cou01ta]          0.02   0.18 -0.33   0.37  
+b[(Intercept) participant_ID:CRO15AN]          0.44   0.20  0.06   0.83  
+b[(Intercept) participant_ID:Dav19ls]         -0.71   0.17 -1.05  -0.37  
+b[(Intercept) participant_ID:DAV19LS]         -0.20   0.35 -0.89   0.52  
+b[(Intercept) participant_ID:DOM08EZ]          0.53   0.30 -0.05   1.13  
+b[(Intercept) participant_ID:DRE17LD]         -0.26   0.35 -0.95   0.38  
+b[(Intercept) participant_ID:EAG18VO]          0.33   0.39 -0.42   1.08  
+b[(Intercept) participant_ID:elb22an]          0.04   0.43 -0.78   0.90  
+b[(Intercept) participant_ID:FAR06SH]          0.30   0.34 -0.36   0.99  
+b[(Intercept) participant_ID:FAW24JI]         -0.24   0.44 -1.10   0.61  
+b[(Intercept) participant_ID:FAY14CA]         -0.13   0.42 -0.97   0.69  
+b[(Intercept) participant_ID:Fer05lo]         -0.01   0.27 -0.54   0.52  
+b[(Intercept) participant_ID:FEr05lo]         -0.05   0.42 -0.87   0.75  
+b[(Intercept) participant_ID:FER05LO]          0.87   0.37  0.15   1.60  
+b[(Intercept) participant_ID:FLE16TA]          0.04   0.38 -0.71   0.81  
+b[(Intercept) participant_ID:FOR24CH]          0.27   0.21 -0.12   0.67  
+b[(Intercept) participant_ID:FOX29CH]         -0.18   0.21 -0.58   0.23  
+b[(Intercept) participant_ID:FRU06ND]         -0.06   0.34 -0.75   0.59  
+b[(Intercept) participant_ID:Gas09rs]          0.28   0.43 -0.53   1.14  
+b[(Intercept) participant_ID:GAT11KI]         -0.32   0.26 -0.83   0.18  
+b[(Intercept) participant_ID:GET10NN]          0.13   0.27 -0.40   0.67  
+b[(Intercept) participant_ID:Gle10mc]         -0.16   0.37 -0.87   0.57  
+b[(Intercept) participant_ID:GLE27RT]          0.42   0.34 -0.23   1.10  
+b[(Intercept) participant_ID:GOL19ER]         -0.45   0.38 -1.22   0.30  
+b[(Intercept) participant_ID:GRA9911]          0.07   0.42 -0.74   0.88  
+b[(Intercept) participant_ID:hal13ez]          0.15   0.44 -0.71   1.01  
+b[(Intercept) participant_ID:Hal13ez]          0.23   0.34 -0.44   0.91  
+b[(Intercept) participant_ID:HAV12ER]          0.47   0.23  0.02   0.92  
+b[(Intercept) participant_ID:HAW16ES]         -0.44   0.21 -0.85  -0.02  
+b[(Intercept) participant_ID:HOO16OZ]         -0.36   0.25 -0.83   0.12  
+b[(Intercept) participant_ID:HOW10ER]          0.17   0.28 -0.38   0.71  
+b[(Intercept) participant_ID:HYD06NY]          0.27   0.25 -0.21   0.77  
+b[(Intercept) participant_ID:ILL76EN]          0.24   0.38 -0.50   0.97  
+b[(Intercept) participant_ID:IM]              -0.29   0.44 -1.13   0.58  
+b[(Intercept) participant_ID:IND02SA]          0.67   0.36 -0.04   1.39  
+b[(Intercept) participant_ID:IND19RS]          0.50   0.28 -0.07   1.04  
+b[(Intercept) participant_ID:ING30NS]          0.11   0.17 -0.22   0.43  
+b[(Intercept) participant_ID:INN02RY]          0.08   0.43 -0.73   0.91  
+b[(Intercept) participant_ID:INN29TH]         -0.61   0.22 -1.02  -0.18  
+b[(Intercept) participant_ID:IVE09RO]          0.03   0.26 -0.48   0.53  
+b[(Intercept) participant_ID:KAT22WA]          0.52   0.18  0.17   0.88  
+b[(Intercept) participant_ID:KEN16AD]         -0.11   0.16 -0.42   0.20  
+b[(Intercept) participant_ID:Ken21Lo]         -0.90   0.27 -1.41  -0.38  
+b[(Intercept) participant_ID:Kir21es]         -0.14   0.43 -0.99   0.70  
+b[(Intercept) participant_ID:KUT23NA]         -0.08   0.24 -0.54   0.39  
+b[(Intercept) participant_ID:LAK05ER]         -0.28   0.20 -0.68   0.12  
+b[(Intercept) participant_ID:LAM11UI]          0.47   0.21  0.06   0.87  
+b[(Intercept) participant_ID:LAP15NT]         -0.38   0.20 -0.78   0.01  
+b[(Intercept) participant_ID:LAW14SE]         -0.69   0.21 -1.10  -0.28  
+b[(Intercept) participant_ID:LAW27VI]          0.23   0.21 -0.19   0.64  
+b[(Intercept) participant_ID:Lil20oe]          0.48   0.27 -0.04   0.99  
+b[(Intercept) participant_ID:LIN27ST]          0.11   0.24 -0.33   0.60  
+b[(Intercept) participant_ID:Lon11se]         -0.30   0.38 -1.05   0.45  
+b[(Intercept) participant_ID:lon20es]          0.10   0.16 -0.21   0.42  
+b[(Intercept) participant_ID:MAE27ES]          0.34   0.35 -0.34   1.09  
+b[(Intercept) participant_ID:Mai15er]         -0.15   0.43 -0.99   0.71  
+b[(Intercept) participant_ID:Mer12Ra]         -0.24   0.43 -1.10   0.58  
+b[(Intercept) participant_ID:MOU]             -0.04   0.39 -0.80   0.73  
+b[(Intercept) participant_ID:MUL13ON]          0.40   0.43 -0.44   1.28  
+b[(Intercept) participant_ID:NOR03IS]          0.56   0.21  0.13   0.98  
+b[(Intercept) participant_ID:NOR08IA]         -0.29   0.27 -0.81   0.24  
+b[(Intercept) participant_ID:OAK15KAC]         0.22   0.29 -0.35   0.80  
+b[(Intercept) participant_ID:oce10ta]         -0.31   0.28 -0.86   0.25  
+b[(Intercept) participant_ID:Old16rs]          0.03   0.43 -0.80   0.86  
+b[(Intercept) participant_ID:OLE03TA]          0.02   0.21 -0.38   0.42  
+b[(Intercept) participant_ID:ORC25NG]          0.40   0.43 -0.40   1.26  
+b[(Intercept) participant_ID:OVE19SS]          0.02   0.38 -0.72   0.75  
+b[(Intercept) participant_ID:OWE02VA]         -0.32   0.44 -1.18   0.54  
+b[(Intercept) participant_ID:PAR23UO]          0.08   0.37 -0.64   0.82  
+b[(Intercept) participant_ID:Pea94ns]         -0.31   0.34 -0.96   0.37  
+b[(Intercept) participant_ID:PET05NT]         -0.35   0.32 -1.00   0.27  
+b[(Intercept) participant_ID:PIE28LD]         -0.60   0.35 -1.30   0.06  
+b[(Intercept) participant_ID:PIT10IS]         -0.27   0.28 -0.82   0.27  
+b[(Intercept) participant_ID:pla09so]         -0.38   0.43 -1.22   0.43  
+b[(Intercept) participant_ID:PLE24ON]          0.47   0.32 -0.15   1.10  
+b[(Intercept) participant_ID:PLY29ER]         -0.73   0.28 -1.29  -0.20  
+b[(Intercept) participant_ID:POC01AL]         -0.64   0.21 -1.04  -0.24  
+b[(Intercept) participant_ID:PRI11TH]          0.68   0.20  0.28   1.08  
+b[(Intercept) participant_ID:PRO05EY]         -0.05   0.32 -0.68   0.59  
+b[(Intercept) participant_ID:Qui24ig]         -0.72   0.26 -1.25  -0.21  
+b[(Intercept) participant_ID:QUI24IG]         -0.39   0.39 -1.17   0.37  
+b[(Intercept) participant_ID:REE03EN]          0.07   0.29 -0.50   0.66  
+b[(Intercept) participant_ID:REN23AN]          0.64   0.24  0.18   1.09  
+b[(Intercept) participant_ID:REWU18]           0.13   0.39 -0.63   0.89  
+b[(Intercept) participant_ID:RID09IA]         -0.41   0.28 -0.95   0.15  
+b[(Intercept) participant_ID:RIV08CK]         -0.15   0.35 -0.85   0.54  
+b[(Intercept) participant_ID:ROA09AN]         -0.29   0.26 -0.81   0.23  
+b[(Intercept) participant_ID:ROM03GO]          0.49   0.30 -0.08   1.08  
+b[(Intercept) participant_ID:ron03bs]          0.09   0.19 -0.28   0.46  
+b[(Intercept) participant_ID:San28le]          0.44   0.43 -0.39   1.28  
+b[(Intercept) participant_ID:SAN28LE]         -0.51   0.31 -1.10   0.09  
+b[(Intercept) participant_ID:SAT17SI]          0.13   0.42 -0.71   1.00  
+b[(Intercept) participant_ID:SAW16IA]          0.47   0.35 -0.22   1.16  
+b[(Intercept) participant_ID:SEA25ES]         -0.13   0.31 -0.75   0.50  
+b[(Intercept) participant_ID:SEVUS]           -0.07   0.41 -0.91   0.75  
+b[(Intercept) participant_ID:SKI30WI]          0.57   0.21  0.18   0.98  
+b[(Intercept) participant_ID:SOU05RY]          0.77   0.17  0.45   1.11  
+b[(Intercept) participant_ID:SOU09CK]         -0.71   0.32 -1.34  -0.10  
+b[(Intercept) participant_ID:SPR11AN]         -0.57   0.23 -1.01  -0.11  
+b[(Intercept) participant_ID:STR15ND]          0.26   0.26 -0.23   0.77  
+b[(Intercept) participant_ID:SUM09LO]         -0.51   0.34 -1.18   0.15  
+b[(Intercept) participant_ID:SVI31VA]         -0.02   0.27 -0.55   0.50  
+b[(Intercept) participant_ID:SVO07NA]         -0.36   0.38 -1.09   0.39  
+b[(Intercept) participant_ID:TAN24ER]         -0.60   0.39 -1.36   0.17  
+b[(Intercept) participant_ID:TAN91FU]         -0.48   0.35 -1.18   0.19  
+b[(Intercept) participant_ID:Ter06aw]          0.61   0.44 -0.27   1.48  
+b[(Intercept) participant_ID:TER06AW]          0.45   0.14  0.17   0.73  
+b[(Intercept) participant_ID:TER12MO]         -0.13   0.34 -0.78   0.53  
+b[(Intercept) participant_ID:THO20GI]         -0.12   0.24 -0.60   0.36  
+b[(Intercept) participant_ID:VER10HY]          0.06   0.38 -0.69   0.82  
+b[(Intercept) participant_ID:WAL11RY]         -0.04   0.38 -0.77   0.72  
+b[(Intercept) participant_ID:wea07on]          0.51   0.28 -0.01   1.06  
+b[(Intercept) participant_ID:WEB02NU]          0.02   0.26 -0.49   0.52  
+b[(Intercept) participant_ID:WES94ER]         -0.22   0.28 -0.76   0.31  
+b[(Intercept) participant_ID:Wil31ar]          0.14   0.44 -0.69   1.00  
+b[(Intercept) participant_ID:WIN05RG]          0.62   0.37 -0.10   1.36  
+b[(Intercept) participant_ID:WIN20LS]          0.31   0.29 -0.24   0.90  
+b[(Intercept) participant_ID:WOO08GS]          0.48   0.19  0.11   0.88  
+b[(Intercept) participant_ID:YJZ20YC]         -0.22   0.30 -0.80   0.36  
+b[(Intercept) participant_ID:YOS12CK]         -0.32   0.14 -0.59  -0.05  
+b[(Intercept) participant_ID:ZWOP888]          0.55   0.44 -0.29   1.44  
+sigma                                          0.81   0.02  0.77   0.84  
+Sigma[participant_ID:(Intercept),(Intercept)]  0.26   0.05  0.18   0.36  
+
+Fit Diagnostics:
+           mean   sd   2.5%   97.5%
+mean_PPD 1.34   0.03 1.28   1.40   
+
+The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help('summary.stanreg')).
+
+MCMC diagnostics
+                                              mcse Rhat n_eff
+(Intercept)                                   0.00 1.00  816 
+moral                                         0.00 1.00 3991 
+agencyOther                                   0.00 1.00 4189 
+b[(Intercept) participant_ID:12]              0.00 1.00 4685 
+b[(Intercept) participant_ID:12303am]         0.01 1.00 4209 
+b[(Intercept) participant_ID:20903IN]         0.01 1.00 5867 
+b[(Intercept) participant_ID:35T28GA]         0.00 1.00 3937 
+b[(Intercept) participant_ID:62n26th]         0.00 1.00 3200 
+b[(Intercept) participant_ID:63r79ch]         0.00 1.00 4792 
+b[(Intercept) participant_ID:77t02vo]         0.01 1.00 4373 
+b[(Intercept) participant_ID:892]             0.01 1.00 4451 
+b[(Intercept) participant_ID:AGU12IN]         0.00 1.00 5204 
+b[(Intercept) participant_ID:ALL21AL]         0.01 1.00 3909 
+b[(Intercept) participant_ID:ALU07TH]         0.00 1.00 3797 
+b[(Intercept) participant_ID:AND10WN]         0.00 1.00 4230 
+b[(Intercept) participant_ID:ASH04FF]         0.00 1.00 2806 
+b[(Intercept) participant_ID:bag20ki]         0.01 1.00 5141 
+b[(Intercept) participant_ID:Bag20ki]         0.00 1.00 4881 
+b[(Intercept) participant_ID:BAR02LE]         0.01 1.00 4147 
+b[(Intercept) participant_ID:Bar17ng]         0.00 1.00 5521 
+b[(Intercept) participant_ID:BAR17ng]         0.00 1.00 5030 
+b[(Intercept) participant_ID:BEC05ON]         0.01 1.00 5359 
+b[(Intercept) participant_ID:BEE23AN]         0.00 1.00 4706 
+b[(Intercept) participant_ID:BEN20FF]         0.01 1.00 4195 
+b[(Intercept) participant_ID:BEN29ER]         0.01 1.00 4727 
+b[(Intercept) participant_ID:BER28MS]         0.00 1.00 4239 
+b[(Intercept) participant_ID:BIR05OD]         0.00 1.00 4268 
+b[(Intercept) participant_ID:Bit23ly]         0.01 1.00 4157 
+b[(Intercept) participant_ID:BIT23ly]         0.01 1.00 5032 
+b[(Intercept) participant_ID:BIT23LY]         0.00 1.00 5834 
+b[(Intercept) participant_ID:BIT28BE]         0.00 1.00 3991 
+b[(Intercept) participant_ID:BRI04LE]         0.00 1.00 4442 
+b[(Intercept) participant_ID:BRO08WE]         0.01 1.00 4535 
+b[(Intercept) participant_ID:Bro13on]         0.00 1.00 5079 
+b[(Intercept) participant_ID:BRO13ON]         0.01 1.00 5427 
+b[(Intercept) participant_ID:Bro28oy]         0.01 1.00 4405 
+b[(Intercept) participant_ID:BRO29HA]         0.00 1.00 4903 
+b[(Intercept) participant_ID:BUT07ON]         0.00 1.00 3168 
+b[(Intercept) participant_ID:BYA05EN]         0.01 1.00 4172 
+b[(Intercept) participant_ID:cal02sa]         0.01 1.00 4181 
+b[(Intercept) participant_ID:Cal02sa]         0.01 1.00 4580 
+b[(Intercept) participant_ID:CAR03ES]         0.00 1.00 4499 
+b[(Intercept) participant_ID:CHE06NG]         0.00 1.00 2302 
+b[(Intercept) participant_ID:CHU23OR]         0.00 1.00 4325 
+b[(Intercept) participant_ID:cli10an]         0.00 1.00 5357 
+b[(Intercept) participant_ID:COL19EY]         0.00 1.00 4620 
+b[(Intercept) participant_ID:Con09rd]         0.00 1.00 4403 
+b[(Intercept) participant_ID:COP24HU]         0.00 1.00 3415 
+b[(Intercept) participant_ID:cou01ta]         0.00 1.00 3869 
+b[(Intercept) participant_ID:CRO15AN]         0.00 1.00 4270 
+b[(Intercept) participant_ID:Dav19ls]         0.00 1.00 3879 
+b[(Intercept) participant_ID:DAV19LS]         0.00 1.00 5056 
+b[(Intercept) participant_ID:DOM08EZ]         0.00 1.00 4751 
+b[(Intercept) participant_ID:DRE17LD]         0.00 1.00 5016 
+b[(Intercept) participant_ID:EAG18VO]         0.01 1.00 5192 
+b[(Intercept) participant_ID:elb22an]         0.01 1.00 5141 
+b[(Intercept) participant_ID:FAR06SH]         0.00 1.00 4693 
+b[(Intercept) participant_ID:FAW24JI]         0.01 1.00 4791 
+b[(Intercept) participant_ID:FAY14CA]         0.01 1.00 5480 
+b[(Intercept) participant_ID:Fer05lo]         0.00 1.00 4645 
+b[(Intercept) participant_ID:FEr05lo]         0.01 1.00 4481 
+b[(Intercept) participant_ID:FER05LO]         0.01 1.00 4138 
+b[(Intercept) participant_ID:FLE16TA]         0.01 1.00 4445 
+b[(Intercept) participant_ID:FOR24CH]         0.00 1.00 4914 
+b[(Intercept) participant_ID:FOX29CH]         0.00 1.00 4175 
+b[(Intercept) participant_ID:FRU06ND]         0.01 1.00 4581 
+b[(Intercept) participant_ID:Gas09rs]         0.01 1.00 4585 
+b[(Intercept) participant_ID:GAT11KI]         0.00 1.00 4308 
+b[(Intercept) participant_ID:GET10NN]         0.00 1.00 5282 
+b[(Intercept) participant_ID:Gle10mc]         0.01 1.00 5237 
+b[(Intercept) participant_ID:GLE27RT]         0.01 1.00 4195 
+b[(Intercept) participant_ID:GOL19ER]         0.01 1.00 4505 
+b[(Intercept) participant_ID:GRA9911]         0.01 1.00 4589 
+b[(Intercept) participant_ID:hal13ez]         0.01 1.00 5785 
+b[(Intercept) participant_ID:Hal13ez]         0.00 1.00 5054 
+b[(Intercept) participant_ID:HAV12ER]         0.00 1.00 3949 
+b[(Intercept) participant_ID:HAW16ES]         0.00 1.00 4594 
+b[(Intercept) participant_ID:HOO16OZ]         0.00 1.00 4595 
+b[(Intercept) participant_ID:HOW10ER]         0.00 1.00 5233 
+b[(Intercept) participant_ID:HYD06NY]         0.00 1.00 4743 
+b[(Intercept) participant_ID:ILL76EN]         0.01 1.00 5244 
+b[(Intercept) participant_ID:IM]              0.01 1.00 4596 
+b[(Intercept) participant_ID:IND02SA]         0.01 1.00 4526 
+b[(Intercept) participant_ID:IND19RS]         0.00 1.00 5324 
+b[(Intercept) participant_ID:ING30NS]         0.00 1.00 3182 
+b[(Intercept) participant_ID:INN02RY]         0.01 1.00 5291 
+b[(Intercept) participant_ID:INN29TH]         0.00 1.00 3912 
+b[(Intercept) participant_ID:IVE09RO]         0.00 1.00 4249 
+b[(Intercept) participant_ID:KAT22WA]         0.00 1.00 4519 
+b[(Intercept) participant_ID:KEN16AD]         0.00 1.00 2910 
+b[(Intercept) participant_ID:Ken21Lo]         0.00 1.00 3834 
+b[(Intercept) participant_ID:Kir21es]         0.01 1.00 5342 
+b[(Intercept) participant_ID:KUT23NA]         0.00 1.00 5646 
+b[(Intercept) participant_ID:LAK05ER]         0.00 1.00 3891 
+b[(Intercept) participant_ID:LAM11UI]         0.00 1.00 4535 
+b[(Intercept) participant_ID:LAP15NT]         0.00 1.00 4486 
+b[(Intercept) participant_ID:LAW14SE]         0.00 1.00 3948 
+b[(Intercept) participant_ID:LAW27VI]         0.00 1.00 3820 
+b[(Intercept) participant_ID:Lil20oe]         0.00 1.00 4353 
+b[(Intercept) participant_ID:LIN27ST]         0.00 1.00 4405 
+b[(Intercept) participant_ID:Lon11se]         0.01 1.00 5014 
+b[(Intercept) participant_ID:lon20es]         0.00 1.00 3775 
+b[(Intercept) participant_ID:MAE27ES]         0.01 1.00 4287 
+b[(Intercept) participant_ID:Mai15er]         0.01 1.00 5402 
+b[(Intercept) participant_ID:Mer12Ra]         0.01 1.00 5895 
+b[(Intercept) participant_ID:MOU]             0.01 1.00 5286 
+b[(Intercept) participant_ID:MUL13ON]         0.01 1.00 4284 
+b[(Intercept) participant_ID:NOR03IS]         0.00 1.00 4726 
+b[(Intercept) participant_ID:NOR08IA]         0.00 1.00 6112 
+b[(Intercept) participant_ID:OAK15KAC]        0.00 1.00 4467 
+b[(Intercept) participant_ID:oce10ta]         0.00 1.00 3566 
+b[(Intercept) participant_ID:Old16rs]         0.01 1.00 4969 
+b[(Intercept) participant_ID:OLE03TA]         0.00 1.00 4281 
+b[(Intercept) participant_ID:ORC25NG]         0.01 1.00 4781 
+b[(Intercept) participant_ID:OVE19SS]         0.01 1.00 4983 
+b[(Intercept) participant_ID:OWE02VA]         0.01 1.00 5027 
+b[(Intercept) participant_ID:PAR23UO]         0.01 1.00 5099 
+b[(Intercept) participant_ID:Pea94ns]         0.00 1.00 5145 
+b[(Intercept) participant_ID:PET05NT]         0.00 1.00 5383 
+b[(Intercept) participant_ID:PIE28LD]         0.01 1.00 4533 
+b[(Intercept) participant_ID:PIT10IS]         0.00 1.00 4993 
+b[(Intercept) participant_ID:pla09so]         0.01 1.00 4982 
+b[(Intercept) participant_ID:PLE24ON]         0.00 1.00 5005 
+b[(Intercept) participant_ID:PLY29ER]         0.00 1.00 4928 
+b[(Intercept) participant_ID:POC01AL]         0.00 1.00 3950 
+b[(Intercept) participant_ID:PRI11TH]         0.00 1.00 4034 
+b[(Intercept) participant_ID:PRO05EY]         0.00 1.00 4615 
+b[(Intercept) participant_ID:Qui24ig]         0.00 1.00 4489 
+b[(Intercept) participant_ID:QUI24IG]         0.01 1.00 4918 
+b[(Intercept) participant_ID:REE03EN]         0.00 1.00 5370 
+b[(Intercept) participant_ID:REN23AN]         0.00 1.00 4389 
+b[(Intercept) participant_ID:REWU18]          0.01 1.00 4567 
+b[(Intercept) participant_ID:RID09IA]         0.00 1.00 5431 
+b[(Intercept) participant_ID:RIV08CK]         0.01 1.00 4261 
+b[(Intercept) participant_ID:ROA09AN]         0.00 1.00 4823 
+b[(Intercept) participant_ID:ROM03GO]         0.00 1.00 4463 
+b[(Intercept) participant_ID:ron03bs]         0.00 1.00 4380 
+b[(Intercept) participant_ID:San28le]         0.01 1.00 5145 
+b[(Intercept) participant_ID:SAN28LE]         0.00 1.00 4985 
+b[(Intercept) participant_ID:SAT17SI]         0.01 1.00 5402 
+b[(Intercept) participant_ID:SAW16IA]         0.01 1.00 4536 
+b[(Intercept) participant_ID:SEA25ES]         0.00 1.00 5243 
+b[(Intercept) participant_ID:SEVUS]           0.01 1.00 5130 
+b[(Intercept) participant_ID:SKI30WI]         0.00 1.00 4794 
+b[(Intercept) participant_ID:SOU05RY]         0.00 1.00 3829 
+b[(Intercept) participant_ID:SOU09CK]         0.00 1.00 5100 
+b[(Intercept) participant_ID:SPR11AN]         0.00 1.00 4224 
+b[(Intercept) participant_ID:STR15ND]         0.00 1.00 4883 
+b[(Intercept) participant_ID:SUM09LO]         0.00 1.00 5877 
+b[(Intercept) participant_ID:SVI31VA]         0.00 1.00 4324 
+b[(Intercept) participant_ID:SVO07NA]         0.01 1.00 5358 
+b[(Intercept) participant_ID:TAN24ER]         0.01 1.00 4648 
+b[(Intercept) participant_ID:TAN91FU]         0.01 1.00 4295 
+b[(Intercept) participant_ID:Ter06aw]         0.01 1.00 4277 
+b[(Intercept) participant_ID:TER06AW]         0.00 1.00 3042 
+b[(Intercept) participant_ID:TER12MO]         0.01 1.00 4278 
+b[(Intercept) participant_ID:THO20GI]         0.00 1.00 4860 
+b[(Intercept) participant_ID:VER10HY]         0.01 1.00 4693 
+b[(Intercept) participant_ID:WAL11RY]         0.01 1.00 4342 
+b[(Intercept) participant_ID:wea07on]         0.00 1.00 4727 
+b[(Intercept) participant_ID:WEB02NU]         0.00 1.00 4118 
+b[(Intercept) participant_ID:WES94ER]         0.00 1.00 4647 
+b[(Intercept) participant_ID:Wil31ar]         0.01 1.00 4249 
+b[(Intercept) participant_ID:WIN05RG]         0.01 1.00 5222 
+b[(Intercept) participant_ID:WIN20LS]         0.00 1.00 4262 
+b[(Intercept) participant_ID:WOO08GS]         0.00 1.00 4080 
+b[(Intercept) participant_ID:YJZ20YC]         0.00 1.00 4347 
+b[(Intercept) participant_ID:YOS12CK]         0.00 1.00 2746 
+b[(Intercept) participant_ID:ZWOP888]         0.01 1.00 4934 
+sigma                                         0.00 1.00 3779 
+Sigma[participant_ID:(Intercept),(Intercept)] 0.00 1.00 1108 
+mean_PPD                                      0.00 1.00 4508 
+log-posterior                                 0.47 1.00  799 
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
+We fitted a Bayesian linear mixed model (estimated using MCMC sampling with 4 chains of 2000 iterations and a warmup of 1000) to predict pos with moral and agency (formula: pos ~ moral + agency). The model included participant_ID as random effect (formula:
+~1 | participant_ID). Priors over parameters were all set as normal (mean = 0.00, SD = 2.20; mean = 0.00, SD = 5.39) distributions. The model's explanatory power is substantial (R2 = 0.43, 95% CI [0.39, 0.48], adj. R2 = 0.39) and the part related to the
+fixed effects alone (marginal R2) is of 0.25 (95% CI [0.21, 0.30]). The model's intercept, corresponding to moral = 0 and agency = Self, is at 1.24 (95% CI [1.13, 1.34]). Within this model:
+
+  - The effect of moral (Median = 0.39, 95% CI [0.34, 0.43]) has a 100.00% probability of being positive (> 0), 100.00% of being significant (> 0.05), and 99.67% of being large (> 0.32). The estimation successfully converged (Rhat = 1.001) and the indices
+are reliable (ESS = 4617)
+  - The effect of agency [Other] (Median = -0.06, 95% CI [-0.16, 0.05]) has a 86.50% probability of being negative (< 0), 52.68% of being significant (< -0.05), and 0.00% of being large (< -0.32). The estimation successfully converged (Rhat = 1.000) and the
+indices are reliable (ESS = 4016)
+
+Following the Sequential Effect eXistence and sIgnificance Testing (SEXIT) framework, we report the median of the posterior distribution and its 95% CI (Highest Density Interval), along the probability of direction (pd), the probability of significance and
+the probability of being large. The thresholds beyond which the effect is considered as significant (i.e., non-negligible) and large are |0.05| and |0.32|. Convergence and stability of the Bayesian sampling has been assessed using R-hat, which should be
+below 1.01 (Vehtari et al., 2019), and Effective Sample Size (ESS), which should be greater than 1000 (Burkner, 2017).
