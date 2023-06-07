@@ -1,5 +1,4 @@
 library(rstanarm)
-# library(rstantools)
 library(report)
 library(sjPlot)
 library(ggplot2)
@@ -56,67 +55,60 @@ report_neg_IH_noint <- report(neg_IH_noint)
 
 # save the models
 sink(file.path(outputpath, "pos_MA_noint.txt"))
-summary(pos_MA_noint, prob = c(0.025, 0.975),digits = 2)
-# print(posterior_interval(bmodel2_angdis, level = 0.95))
 print(report_pos_MA_noint)
+summary(pos_MA_noint, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "pos_MA_int.txt"))
-summary(pos_MA_int, prob = c(0.025, 0.975),digits = 2)
 print(report_pos_MA_int)
+summary(pos_MA_int, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "pos_IB_noint.txt"))
-summary(pos_IB_noint, prob = c(0.025, 0.975),digits = 2)
 print(report_pos_IB_noint)
+summary(pos_IB_noint, prob = c(0.025, 0.975),digits = 2)
 sink()
-
 sink(file.path(outputpath, "pos_IB_int.txt"))
-summary(pos_IB_int, prob = c(0.025, 0.975),digits = 2)
 print(report_pos_IB_int)
+summary(pos_IB_int, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "pos_IH_noint.txt"))
-summary(pos_IH_noint, prob = c(0.025, 0.975),digits = 2)
 print(report_pos_IH_noint)
+summary(pos_IH_noint, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "pos_IH_int.txt"))
-summary(pos_IH_int, prob = c(0.025, 0.975),digits = 2)
 print(report_pos_IH_int)
+summary(pos_IH_int, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "neg_MA_noint.txt"))
-summary(neg_MA_noint, prob = c(0.025, 0.975),digits = 2)
 print(report_neg_MA_noint)
+summary(neg_MA_noint, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "neg_MA_int.txt"))
-summary(neg_MA_int, prob = c(0.025, 0.975),digits = 2)
 print(report_neg_MA_int)
+summary(neg_MA_int, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "neg_IB_noint.txt"))
-summary(neg_IB_noint, prob = c(0.025, 0.975),digits = 2)
 print(report_neg_IB_noint)
+summary(neg_IB_noint, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "neg_IB_int.txt"))
-summary(neg_IB_int, prob = c(0.025, 0.975),digits = 2)
 print(report_neg_IB_int)
+summary(neg_IB_int, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "neg_IH_noint.txt"))
-summary(neg_IH_noint, prob = c(0.025, 0.975),digits = 2)
 print(report_neg_IH_noint)
+summary(neg_IH_noint, prob = c(0.025, 0.975),digits = 2)
 sink()
 
 sink(file.path(outputpath, "neg_IH_int.txt"))
-summary(neg_IH_int, prob = c(0.025, 0.975),digits = 2)
 print(report_neg_IH_int)
+summary(neg_IH_int, prob = c(0.025, 0.975),digits = 2)
 sink()
-
-
-# plot the interactions and save the plots
-# plot_model(pos_MA_int, type = "int", terms = c("moral", "agency"), title = "Positive Emotions: Moral Agency Interaction")
-# ggsave(file.path(outputpath, "pos_MA_int.png"), width = 6, height = 6, dpi = 300)

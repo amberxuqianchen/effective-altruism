@@ -5,7 +5,7 @@ test_function.ipynb
 test*
 # ignore data files for the time being
 0_data/combined*
-
+df.csv
 # History files
 .Rhistory
 .Rapp.history

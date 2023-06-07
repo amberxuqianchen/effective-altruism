@@ -1,0 +1,23 @@
+We fitted a Bayesian linear mixed model (estimated using MCMC sampling with 4 chains of 2000 iterations and a warmup of 1000) to predict pos with k_other, moral and agency (formula: pos ~ k_other * moral * agency). The model included participant_ID as
+random effect (formula: ~1 | participant_ID). Priors over parameters were all set as normal (mean = 0.00, SD = 2.75; mean = 0.00, SD = 2.18; mean = 0.00, SD = 5.38; mean = 0.00, SD = 2.14; mean = 0.00, SD = 4.40; mean = 0.00, SD = 3.04; mean = 0.00, SD =
+2.98) distributions. The model's explanatory power is substantial (R2 = 0.43, 95% CI [0.39, 0.47], adj. R2 = 0.37) and the part related to the fixed effects alone (marginal R2) is of 0.26 (95% CI [0.21, 0.31]). The model's intercept, corresponding to
+k_other = 0, moral = 0 and agency = Other, is at 1.25 (95% CI [1.13, 1.36]). Within this model:
+
+  - The effect of k other (Median = -0.06, 95% CI [-0.18, 0.06]) has a 85.42% probability of being negative (< 0), 54.62% of being significant (< -0.05), and 0.00% of being large (< -0.32). The estimation successfully converged (Rhat = 0.999) and the indices
+are reliable (ESS = 6395)
+  - The effect of moral (Median = 0.30, 95% CI [0.23, 0.38]) has a 100.00% probability of being positive (> 0), 100.00% of being significant (> 0.05), and 31.30% of being large (> 0.32). The estimation successfully converged (Rhat = 1.000) and the indices
+are reliable (ESS = 2600)
+  - The effect of agency [Self] (Median = -0.09, 95% CI [-0.20, 0.02]) has a 94.27% probability of being negative (< 0), 73.70% of being significant (< -0.05), and 0.00% of being large (< -0.32). The estimation successfully converged (Rhat = 0.999) and the
+indices are reliable (ESS = 6337)
+  - The effect of k other × moral (Median = 0.03, 95% CI [-0.03, 0.10]) has a 85.10% probability of being positive (> 0), 29.23% of being significant (> 0.05), and 0.00% of being large (> 0.32). The estimation successfully converged (Rhat = 1.000) and the
+indices are reliable (ESS = 4656)
+  - The effect of k other × agency [Self] (Median = -0.01, 95% CI [-0.13, 0.10]) has a 59.40% probability of being negative (< 0), 25.12% of being significant (< -0.05), and 0.00% of being large (< -0.32). The estimation successfully converged (Rhat = 1.000)
+and the indices are reliable (ESS = 5064)
+  - The effect of moral × agency [Self] (Median = 0.15, 95% CI [0.05, 0.24]) has a 99.88% probability of being positive (> 0), 97.30% of being significant (> 0.05), and 0.05% of being large (> 0.32). The estimation successfully converged (Rhat = 1.002) and
+the indices are reliable (ESS = 4640)
+  - The effect of (k other × moral) × agency [Self] (Median = -0.03, 95% CI [-0.12, 0.06]) has a 71.40% probability of being negative (< 0), 29.43% of being significant (< -0.05), and 0.00% of being large (< -0.32). The estimation successfully converged
+(Rhat = 1.001) and the indices are reliable (ESS = 4806)
+
+Following the Sequential Effect eXistence and sIgnificance Testing (SEXIT) framework, we report the median of the posterior distribution and its 95% CI (Highest Density Interval), along the probability of direction (pd), the probability of significance and
+the probability of being large. The thresholds beyond which the effect is considered as significant (i.e., non-negligible) and large are |0.05| and |0.32|. Convergence and stability of the Bayesian sampling has been assessed using R-hat, which should be
+below 1.01 (Vehtari et al., 2019), and Effective Sample Size (ESS), which should be greater than 1000 (Burkner, 2017).
