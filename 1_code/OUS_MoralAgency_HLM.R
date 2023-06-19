@@ -49,24 +49,103 @@ stargazer(model_IH, type = "text", dep.var.labels = c("Positive Emotions", "Nega
 # Generate the moderator plot with error bar
 # Adding predicted values to the dataframe
 library(interactions)
-p <-interact_plot(pos_MA_int, pred = moral, modx = agency, interval = TRUE)
+p <-interact_plot(pos_MA_int, pred = moral, modx = agency, interval = TRUE)+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath,"OUS_pos_MoralAgency_inter.png"), p, width = 6, height = 4)
 
-plot <- plot_model(pos_MA_int,type = "int")
+plot <- plot_model(pos_MA_int,type = "int")+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "OUS_pos_MoralAgency.png"), plot, width = 6, height = 4)
-plot <- plot_model(neg_MA_int,type = "int")
+plot <- plot_model(neg_MA_int,type = "int")+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "OUS_neg_MoralAgency.png"), plot, width = 6, height = 4)
 
 
-plot <- plot_model(pos_IB_int,type = "pred", terms = c("moral","OUS_IB[meansd]","agency"))
+plot <- plot_model(pos_IB_int,type = "pred", terms = c("moral","OUS_IB[meansd]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "OUS_pos_IB_MoralAgency_3lines .png"), plot, width = 6, height = 4)
 
-plot <- plot_model(neg_IB_int,type = "pred", terms = c("moral","OUS_IB[meansd]","agency"))
+plot <- plot_model(neg_IB_int,type = "pred", terms = c("moral","OUS_IB[meansd]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "OUS_neg_IB_MoralAgency_3lines .png"), plot, width = 6, height = 4)
 
-plot <- plot_model(pos_IH_int,type = "pred", terms = c("moral","OUS_IH[meansd]","agency"))
+plot <- plot_model(pos_IH_int,type = "pred", terms = c("moral","OUS_IH[meansd]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "OUS_pos_IH_MoralAgency_3lines .png"), plot, width = 6, height = 4)
 
-plot <- plot_model(neg_IH_int,type = "pred", terms = c("moral","OUS_IH[meansd]","agency"))
+plot <- plot_model(neg_IH_int,type = "pred", terms = c("moral","OUS_IH[meansd]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "OUS_neg_IH_MoralAgency_3lines .png"), plot, width = 6, height = 4)
 
+# Minmax plots
+
+plot <- plot_model(pos_IB_int,type = "pred", terms = c("moral","OUS_IB[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
+ggsave(file.path(outputpath, "OUS_pos_IB_MoralAgency_minmax.png"), plot, width = 6, height = 4)
+
+plot <- plot_model(neg_IB_int,type = "pred", terms = c("moral","OUS_IB[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
+ggsave(file.path(outputpath, "OUS_neg_IB_MoralAgency_minmax.png"), plot, width = 6, height = 4)
+
+plot <- plot_model(pos_IH_int,type = "pred", terms = c("moral","OUS_IH[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
+ggsave(file.path(outputpath, "OUS_pos_IH_MoralAgency_minmax.png"), plot, width = 6, height = 4)
+
+plot <- plot_model(neg_IH_int,type = "pred", terms = c("moral","OUS_IH[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
+ggsave(file.path(outputpath, "OUS_neg_IH_MoralAgency_minmax.png"), plot, width = 6, height = 4)

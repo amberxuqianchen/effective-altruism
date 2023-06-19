@@ -49,24 +49,66 @@ stargazer(model_other, type = "text", dep.var.labels = c("Positive Emotions", "N
 # Generate the moderator plot with error bar
 # Adding predicted values to the dataframe
 library(interactions)
-p <- interact_plot(pos_MA_int, pred = moral, modx = agency, interval = TRUE)
+p <- interact_plot(pos_MA_int, pred = moral, modx = agency, interval = TRUE)+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath,"HarmAversion_pos_MoralAgency_inter.png"), p, width = 6, height = 4)
 
-plot <- plot_model(pos_MA_int,type = "int")
+plot <- plot_model(pos_MA_int,type = "int")+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "HarmAversion_pos_MoralAgency.png"), plot, width = 6, height = 4)
-plot <- plot_model(neg_MA_int,type = "int")
+plot <- plot_model(neg_MA_int,type = "int")+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "HarmAversion_neg_MoralAgency.png"), plot, width = 6, height = 4)
 
 
-plot <- plot_model(pos_self_int,type = "pred", terms = c("moral","k_self[minmax]","agency"))
+plot <- plot_model(pos_self_int,type = "pred", terms = c("moral","k_self[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "HarmAversion_pos_k_self_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
-plot <- plot_model(neg_self_int,type = "pred", terms = c("moral","k_self[minmax]","agency"))
+plot <- plot_model(neg_self_int,type = "pred", terms = c("moral","k_self[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "HarmAversion_neg_k_self_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
-plot <- plot_model(pos_other_int,type = "pred", terms = c("moral","k_other[minmax]","agency"))
+plot <- plot_model(pos_other_int,type = "pred", terms = c("moral","k_other[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "HarmAversion_pos_k_other_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
-plot <- plot_model(neg_other_int,type = "pred", terms = c("moral","k_other[minmax]","agency"))
+plot <- plot_model(neg_other_int,type = "pred", terms = c("moral","k_other[minmax]","agency"))+
+     theme(text = element_text(size = 20),
+           title = element_text(size = 22),
+           axis.title = element_text(size = 20),
+           axis.text = element_text(size = 18),
+           panel.background = element_rect(fill = "white"),
+           panel.grid = element_blank())
 ggsave(file.path(outputpath, "HarmAversion_neg_k_other_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
