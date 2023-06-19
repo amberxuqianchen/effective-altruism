@@ -58,15 +58,15 @@ plot <- plot_model(neg_MA_int,type = "int")
 ggsave(file.path(outputpath, "HarmAversion_neg_MoralAgency.png"), plot, width = 6, height = 4)
 
 
-plot <- plot_model(pos_self_int,type = "pred", terms = c("moral","k_self[meansd]","agency"))
-ggsave(file.path(outputpath, "HarmAversion_pos_k_self_MoralAgency_3lines .png"), plot, width = 6, height = 4)
+plot <- plot_model(pos_self_int,type = "pred", terms = c("moral","k_self[minmax]","agency"))
+ggsave(file.path(outputpath, "HarmAversion_pos_k_self_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
-plot <- plot_model(neg_self_int,type = "pred", terms = c("moral","k_self[meansd]","agency"))
-ggsave(file.path(outputpath, "HarmAversion_neg_k_self_MoralAgency_3lines .png"), plot, width = 6, height = 4)
+plot <- plot_model(neg_self_int,type = "pred", terms = c("moral","k_self[minmax]","agency"))
+ggsave(file.path(outputpath, "HarmAversion_neg_k_self_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
-plot <- plot_model(pos_other_int,type = "pred", terms = c("moral","k_other[meansd]","agency"))
-ggsave(file.path(outputpath, "HarmAversion_pos_k_other_MoralAgency_3lines .png"), plot, width = 6, height = 4)
+plot <- plot_model(pos_other_int,type = "pred", terms = c("moral","k_other[minmax]","agency"))
+ggsave(file.path(outputpath, "HarmAversion_pos_k_other_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
-plot <- plot_model(neg_other_int,type = "pred", terms = c("moral","k_other[meansd]","agency"))
-ggsave(file.path(outputpath, "HarmAversion_neg_k_other_MoralAgency_3lines .png"), plot, width = 6, height = 4)
+plot <- plot_model(neg_other_int,type = "pred", terms = c("moral","k_other[minmax]","agency"))
+ggsave(file.path(outputpath, "HarmAversion_neg_k_other_MoralAgency_minmax.png"), plot, width = 6, height = 4)
 
