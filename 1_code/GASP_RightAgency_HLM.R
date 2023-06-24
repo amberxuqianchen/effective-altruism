@@ -90,3 +90,19 @@ sw_ra_OUSIH_int <- lmer(bert_shame_withdraw ~ rightness * agency * OUS_IH + (1|p
 gaspmodel_OUSIH <- c(gn_ra_OUSIH_noint, gn_ra_OUSIH_int, gr_ra_OUSIH_noint, gr_ra_OUSIH_int, sn_ra_OUSIH_noint, sn_ra_OUSIH_int, sw_ra_OUSIH_noint, sw_ra_OUSIH_int)
 stargazer(gaspmodel_OUSIH,type = "text", out = paste0(outputpath, "gaspmodel_OUSIH.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
 
+# Models for moral valence and agency and their interaction on "bert_guilt_nbe"      "bert_guilt_repair"   "bert_shame_nse"      "bert_shame_withdraw"
+df$valence <- as.factor(df$moral_valence)
+levels(df$valence) <- c("Moral", "Immoral")
+df$valence <- relevel(df$valence, ref = "Moral")
+
+gn_mv_ag_noint <- lmer(bert_guilt_nbe ~ valence + agency + (1|participant_ID), data = df)
+gn_mv_ag_int <- lmer(bert_guilt_nbe ~ valence * agency + (1|participant_ID), data = df)
+gr_mv_ag_noint <- lmer(bert_guilt_repair ~ valence + agency + (1|participant_ID), data = df)
+gr_mv_ag_int <- lmer(bert_guilt_repair ~ valence * agency + (1|participant_ID), data = df)
+sn_mv_ag_noint <- lmer(bert_shame_nse ~ valence + agency + (1|participant_ID), data = df)
+sn_mv_ag_int <- lmer(bert_shame_nse ~ valence * agency + (1|participant_ID), data = df)
+sw_mv_ag_noint <- lmer(bert_shame_withdraw ~ valence + agency + (1|participant_ID), data = df)
+sw_mv_ag_int <- lmer(bert_shame_withdraw ~ valence * agency + (1|participant_ID), data = df)
+
+gaspmodel_mv_ag <- c(gn_mv_ag_noint, gn_mv_ag_int, gr_mv_ag_noint, gr_mv_ag_int, sn_mv_ag_noint, sn_mv_ag_int, sw_mv_ag_noint, sw_mv_ag_int)
+stargazer(gaspmodel_mv_ag,type = "text", out = paste0(outputpath, "gaspmodel_valence_agency.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
