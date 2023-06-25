@@ -10,10 +10,19 @@ if (!dir.exists(outputpath)) {
   dir.create(outputpath)
 }
 
-# make neutral the reference category in agency
+# make reference category
 df$agency <- as.factor(df$moral_agency)
 levels(df$agency) <- c("Self", "Other")
 df$agency <- relevel(df$agency, ref = "Other")
+df$moral_agency <- as.factor(df$moral_agency)
+levels(df$moral_agency) <- c("Self", "Other")
+df$moral_agency <- relevel(df$moral_agency, ref = "Self")
+df$moral_valence <- as.factor(df$moral_valence)
+levels(df$moral_valence) <- c("Moral", "Immoral")
+df$moral_valence <- relevel(df$moral_valence, ref = "Moral")
+df$valence <- as.factor(df$moral_valence)
+levels(df$valence) <- c("Moral", "Immoral")
+df$valence <- relevel(df$valence, ref = "Immoral")
 
 dfbert <- read.csv('/home/local/PSYCH-ADS/xuqian_chen/Projects/BERT/ccr/dfbert.csv')
 # add prefix to column names
@@ -24,6 +33,32 @@ df$sig_order <- as.integer(df$sig_order)
 # merge based on sig_order
 df <- merge(df, dfbert, by.x = "sig_order", by.y = "bert_sig_order", all = FALSE)
 df$rightness <- df$moraljudge
+
+# Models for valence and agency and OUS_IB on  "bert_guilt_nbe"      "bert_guilt_repair"   "bert_shame_nse"      "bert_shame_withdraw"
+gn_ma_ousib_noint <- lmer(bert_guilt_nbe ~ moral_valence + agency + OUS_IB + (1|participant_ID), data = df)
+gn_ma_ousib_int <- lmer(bert_guilt_nbe ~ moral_valence * agency * OUS_IB + (1|participant_ID), data = df)
+gr_ma_ousib_noint <- lmer(bert_guilt_repair ~ moral_valence + agency + OUS_IB + (1|participant_ID), data = df)
+gr_ma_ousib_int <- lmer(bert_guilt_repair ~ moral_valence * agency * OUS_IB + (1|participant_ID), data = df)
+sn_ma_ousib_noint <- lmer(bert_shame_nse ~ moral_valence + agency + OUS_IB + (1|participant_ID), data = df)
+sn_ma_ousib_int <- lmer(bert_shame_nse ~ moral_valence * agency * OUS_IB + (1|participant_ID), data = df)
+sw_ma_ousib_noint <- lmer(bert_shame_withdraw ~ moral_valence + agency + OUS_IB + (1|participant_ID), data = df)
+sw_ma_ousib_int <- lmer(bert_shame_withdraw ~ moral_valence * agency * OUS_IB + (1|participant_ID), data = df)
+
+gaspmodel <- c(gn_ma_ousib_noint, gn_ma_ousib_int, gr_ma_ousib_noint, gr_ma_ousib_int, sn_ma_ousib_noint, sn_ma_ousib_int, sw_ma_ousib_noint, sw_ma_ousib_int)
+stargazer(gaspmodel,type = "text", out = paste0(outputpath, "gaspmodel_OUSIB.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
+
+# Models for valence and agency and OUS_IH on  "bert_guilt_nbe"      "bert_guilt_repair"   "bert_shame_nse"      "bert_shame_withdraw"
+gn_ma_ousih_noint <- lmer(bert_guilt_nbe ~ moral_valence + agency + OUS_IH + (1|participant_ID), data = df)
+gn_ma_ousih_int <- lmer(bert_guilt_nbe ~ moral_valence * agency * OUS_IH + (1|participant_ID), data = df)
+gr_ma_ousih_noint <- lmer(bert_guilt_repair ~ moral_valence + agency + OUS_IH + (1|participant_ID), data = df)
+gr_ma_ousih_int <- lmer(bert_guilt_repair ~ moral_valence * agency * OUS_IH + (1|participant_ID), data = df)
+sn_ma_ousih_noint <- lmer(bert_shame_nse ~ moral_valence + agency + OUS_IH + (1|participant_ID), data = df)
+sn_ma_ousih_int <- lmer(bert_shame_nse ~ moral_valence * agency * OUS_IH + (1|participant_ID), data = df)
+sw_ma_ousih_noint <- lmer(bert_shame_withdraw ~ moral_valence + agency + OUS_IH + (1|participant_ID), data = df)
+sw_ma_ousih_int <- lmer(bert_shame_withdraw ~ moral_valence * agency * OUS_IH + (1|participant_ID), data = df)
+
+gaspmodel <- c(gn_ma_ousih_noint, gn_ma_ousih_int, gr_ma_ousih_noint, gr_ma_ousih_int, sn_ma_ousih_noint, sn_ma_ousih_int, sw_ma_ousih_noint, sw_ma_ousih_int)
+stargazer(gaspmodel,type = "text", out = paste0(outputpath, "gaspmodel_OUSIH.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
 
 # Models for rightness and agency on "bert_guilt_nbe"      "bert_guilt_repair"   "bert_shame_nse"      "bert_shame_withdraw"
 gn_ra_noint <- lmer(bert_guilt_nbe ~ rightness + agency + (1|participant_ID), data = df)

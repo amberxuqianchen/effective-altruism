@@ -10,7 +10,7 @@ if (!dir.exists(outputpath)) {
   dir.create(outputpath)
 }
 
-# make neutral the reference category in agency
+# make reference category
 df$agency <- as.factor(df$moral_agency)
 levels(df$agency) <- c("Self", "Other")
 df$agency <- relevel(df$agency, ref = "Other")
