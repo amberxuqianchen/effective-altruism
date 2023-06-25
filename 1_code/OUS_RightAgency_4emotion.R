@@ -150,6 +150,58 @@ nn_va_bert_ousib_int <- lmer(neg_other ~ valence * agency * bert_ousib + (1|part
 model_valence_4emotion_bert_ousib <- list(ps_va_bert_ousib_noint, ps_va_bert_ousib_int, pn_va_bert_ousib_noint, pn_va_bert_ousib_int, po_va_bert_ousib_noint, po_va_bert_ousib_int, nn_va_bert_ousib_noint, nn_va_bert_ousib_int)
 stargazer(model_valence_4emotion_bert_ousib, type = "text", out = paste0(outputpath, "model_valence_4emotion_bert_ousib.txt"))
 
+# Models for valence and agency and bert_guilt_nbe and their interaction on the 4 emotions
+ps_va_bert_guilt_nbe_noint <- lmer(pos_self ~ valence + agency + bert_guilt_nbe + (1|participant_ID), data = df)
+ps_va_bert_guilt_nbe_int <- lmer(pos_self ~ valence * agency * bert_guilt_nbe + (1|participant_ID), data = df)
+pn_va_bert_guilt_nbe_noint <- lmer(neg_self ~ valence + agency + bert_guilt_nbe + (1|participant_ID), data = df)
+pn_va_bert_guilt_nbe_int <- lmer(neg_self ~ valence * agency * bert_guilt_nbe + (1|participant_ID), data = df)
+po_va_bert_guilt_nbe_noint <- lmer(pos_other ~ valence + agency + bert_guilt_nbe + (1|participant_ID), data = df)
+po_va_bert_guilt_nbe_int <- lmer(pos_other ~ valence * agency * bert_guilt_nbe + (1|participant_ID), data = df)
+nn_va_bert_guilt_nbe_noint <- lmer(neg_other ~ valence + agency + bert_guilt_nbe + (1|participant_ID), data = df)
+nn_va_bert_guilt_nbe_int <- lmer(neg_other ~ valence * agency * bert_guilt_nbe + (1|participant_ID), data = df)
+
+model_valence_4emotion_bert_guilt_nbe <- list(ps_va_bert_guilt_nbe_noint, ps_va_bert_guilt_nbe_int, pn_va_bert_guilt_nbe_noint, pn_va_bert_guilt_nbe_int, po_va_bert_guilt_nbe_noint, po_va_bert_guilt_nbe_int, nn_va_bert_guilt_nbe_noint, nn_va_bert_guilt_nbe_int)
+stargazer(model_valence_4emotion_bert_guilt_nbe, type = "text", out = paste0(outputpath, "model_valence_4emotion_bert_guilt_nbe.txt"))
+
+# Models for valence and agency and bert_guilt_repair and their interaction on the 4 emotions
+ps_va_bert_guilt_repair_noint <- lmer(pos_self ~ valence + agency + bert_guilt_repair + (1|participant_ID), data = df)
+ps_va_bert_guilt_repair_int <- lmer(pos_self ~ valence * agency * bert_guilt_repair + (1|participant_ID), data = df)
+pn_va_bert_guilt_repair_noint <- lmer(neg_self ~ valence + agency + bert_guilt_repair + (1|participant_ID), data = df)
+pn_va_bert_guilt_repair_int <- lmer(neg_self ~ valence * agency * bert_guilt_repair + (1|participant_ID), data = df)
+po_va_bert_guilt_repair_noint <- lmer(pos_other ~ valence + agency + bert_guilt_repair + (1|participant_ID), data = df)
+po_va_bert_guilt_repair_int <- lmer(pos_other ~ valence * agency * bert_guilt_repair + (1|participant_ID), data = df)
+nn_va_bert_guilt_repair_noint <- lmer(neg_other ~ valence + agency + bert_guilt_repair + (1|participant_ID), data = df)
+nn_va_bert_guilt_repair_int <- lmer(neg_other ~ valence * agency * bert_guilt_repair + (1|participant_ID), data = df)
+
+model_valence_4emotion_bert_guilt_repair <- list(ps_va_bert_guilt_repair_noint, ps_va_bert_guilt_repair_int, pn_va_bert_guilt_repair_noint, pn_va_bert_guilt_repair_int, po_va_bert_guilt_repair_noint, po_va_bert_guilt_repair_int, nn_va_bert_guilt_repair_noint, nn_va_bert_guilt_repair_int)
+stargazer(model_valence_4emotion_bert_guilt_repair, type = "text", out = paste0(outputpath, "model_valence_4emotion_bert_guilt_repair.txt"))
+
+# Models for valence and agency and bert_shame_nse and their interaction on the 4 emotions
+ps_va_bert_shame_nse_noint <- lmer(pos_self ~ valence + agency + bert_shame_nse + (1|participant_ID), data = df)
+ps_va_bert_shame_nse_int <- lmer(pos_self ~ valence * agency * bert_shame_nse + (1|participant_ID), data = df)
+pn_va_bert_shame_nse_noint <- lmer(neg_self ~ valence + agency + bert_shame_nse + (1|participant_ID), data = df)
+pn_va_bert_shame_nse_int <- lmer(neg_self ~ valence * agency * bert_shame_nse + (1|participant_ID), data = df)
+po_va_bert_shame_nse_noint <- lmer(pos_other ~ valence + agency + bert_shame_nse + (1|participant_ID), data = df)
+po_va_bert_shame_nse_int <- lmer(pos_other ~ valence * agency * bert_shame_nse + (1|participant_ID), data = df)
+nn_va_bert_shame_nse_noint <- lmer(neg_other ~ valence + agency + bert_shame_nse + (1|participant_ID), data = df)
+nn_va_bert_shame_nse_int <- lmer(neg_other ~ valence * agency * bert_shame_nse + (1|participant_ID), data = df)
+
+model_valence_4emotion_bert_shame_nse <- list(ps_va_bert_shame_nse_noint, ps_va_bert_shame_nse_int, pn_va_bert_shame_nse_noint, pn_va_bert_shame_nse_int, po_va_bert_shame_nse_noint, po_va_bert_shame_nse_int, nn_va_bert_shame_nse_noint, nn_va_bert_shame_nse_int)
+stargazer(model_valence_4emotion_bert_shame_nse, type = "text", out = paste0(outputpath, "model_valence_4emotion_bert_shame_nse.txt"))
+
+# Models for valence and agency and bert_shame_withdraw and their interaction on the 4 emotions
+ps_va_bert_shame_withdraw_noint <- lmer(pos_self ~ valence + agency + bert_shame_withdraw + (1|participant_ID), data = df)
+ps_va_bert_shame_withdraw_int <- lmer(pos_self ~ valence * agency * bert_shame_withdraw + (1|participant_ID), data = df)
+pn_va_bert_shame_withdraw_noint <- lmer(neg_self ~ valence + agency + bert_shame_withdraw + (1|participant_ID), data = df)
+pn_va_bert_shame_withdraw_int <- lmer(neg_self ~ valence * agency * bert_shame_withdraw + (1|participant_ID), data = df)
+po_va_bert_shame_withdraw_noint <- lmer(pos_other ~ valence + agency + bert_shame_withdraw + (1|participant_ID), data = df)
+po_va_bert_shame_withdraw_int <- lmer(pos_other ~ valence * agency * bert_shame_withdraw + (1|participant_ID), data = df)
+nn_va_bert_shame_withdraw_noint <- lmer(neg_other ~ valence + agency + bert_shame_withdraw + (1|participant_ID), data = df)
+nn_va_bert_shame_withdraw_int <- lmer(neg_other ~ valence * agency * bert_shame_withdraw + (1|participant_ID), data = df)
+
+model_valence_4emotion_bert_shame_withdraw <- list(ps_va_bert_shame_withdraw_noint, ps_va_bert_shame_withdraw_int, pn_va_bert_shame_withdraw_noint, pn_va_bert_shame_withdraw_int, po_va_bert_shame_withdraw_noint, po_va_bert_shame_withdraw_int, nn_va_bert_shame_withdraw_noint, nn_va_bert_shame_withdraw_int)
+stargazer(model_valence_4emotion_bert_shame_withdraw, type = "text", out = paste0(outputpath, "model_valence_4emotion_bert_shame_withdraw.txt"))
+
 # Models for rightness and agency and OUS and their interaction on the 4 emotions
 ps_ra_ousib_noint <- lmer(pos_self ~ rightness + agency + OUS_IB + (1|participant_ID), data = df)
 ps_ra_ousib_int <- lmer(pos_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
