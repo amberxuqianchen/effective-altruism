@@ -45,7 +45,7 @@ sw_ma_ousib_noint <- lmer(bert_shame_withdraw ~ moral_valence + agency + OUS_IB 
 sw_ma_ousib_int <- lmer(bert_shame_withdraw ~ moral_valence * agency * OUS_IB + (1|participant_ID), data = df)
 
 gaspmodel <- c(gn_ma_ousib_noint, gn_ma_ousib_int, gr_ma_ousib_noint, gr_ma_ousib_int, sn_ma_ousib_noint, sn_ma_ousib_int, sw_ma_ousib_noint, sw_ma_ousib_int)
-stargazer(gaspmodel,type = "text", out = paste0(outputpath, "gaspmodel_OUSIB.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
+stargazer(gaspmodel,type = "text", out = paste0(outputpath, "gaspmodel_valence_OUSIB.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
 
 # Models for valence and agency and OUS_IH on  "bert_guilt_nbe"      "bert_guilt_repair"   "bert_shame_nse"      "bert_shame_withdraw"
 gn_ma_ousih_noint <- lmer(bert_guilt_nbe ~ moral_valence + agency + OUS_IH + (1|participant_ID), data = df)
@@ -58,7 +58,7 @@ sw_ma_ousih_noint <- lmer(bert_shame_withdraw ~ moral_valence + agency + OUS_IH 
 sw_ma_ousih_int <- lmer(bert_shame_withdraw ~ moral_valence * agency * OUS_IH + (1|participant_ID), data = df)
 
 gaspmodel <- c(gn_ma_ousih_noint, gn_ma_ousih_int, gr_ma_ousih_noint, gr_ma_ousih_int, sn_ma_ousih_noint, sn_ma_ousih_int, sw_ma_ousih_noint, sw_ma_ousih_int)
-stargazer(gaspmodel,type = "text", out = paste0(outputpath, "gaspmodel_OUSIH.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
+stargazer(gaspmodel,type = "text", out = paste0(outputpath, "gaspmodel_valence_OUSIH.text"), digits=3, no.space = TRUE, header = FALSE, omit.stat = "f")
 
 # Models for rightness and agency on "bert_guilt_nbe"      "bert_guilt_repair"   "bert_shame_nse"      "bert_shame_withdraw"
 gn_ra_noint <- lmer(bert_guilt_nbe ~ rightness + agency + (1|participant_ID), data = df)
