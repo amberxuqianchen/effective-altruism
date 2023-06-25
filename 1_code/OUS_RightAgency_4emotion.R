@@ -14,6 +14,15 @@ if (!dir.exists(outputpath)) {
 df$agency <- as.factor(df$moral_agency)
 levels(df$agency) <- c("Self", "Other")
 df$agency <- relevel(df$agency, ref = "Other")
+df$moral_agency <- as.factor(df$moral_agency)
+levels(df$moral_agency) <- c("Self", "Other")
+df$moral_agency <- relevel(df$moral_agency, ref = "Self")
+df$moral_valence <- as.factor(df$moral_valence)
+levels(df$moral_valence) <- c("Moral", "Immoral")
+df$valence <- as.factor(df$moral_valence)
+levels(df$valence) <- c("Moral", "Immoral")
+df$valence <- relevel(df$valence, ref = "Immoral")
+
 
 dfbert <- read.csv('/home/local/PSYCH-ADS/xuqian_chen/Projects/BERT/ccr/dfbert.csv')
 # add prefix to column names
@@ -48,34 +57,29 @@ model4emotion <- list(ps_ra_noint, ps_ra_int, pn_ra_noint, pn_ra_int, po_ra_noin
 stargazer(model4emotion, type = "text", out = paste0(outputpath, "model4emotion.txt"))
 
 
-df$moral_agency <- as.factor(df$moral_agency)
-levels(df$moral_agency) <- c("Self", "Other")
-df$moral_valence <- as.factor(df$moral_valence)
-levels(df$moral_valence) <- c("Moral", "Immoral")
-
 # plot the interaction
-ggplot(df, aes(x = moral_valence, y = pos_self, fill = agency)) + 
+ggplot(df, aes(x = moral_valence, y = pos_self, fill = moral_agency)) + 
     stat_summary(fun.y = mean, geom = "bar",position = "dodge")+
     stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width = 0.90),width=.2)+
     labs(x = "Moral Valence", y = "mean(proud)", title = "Self-prasing emotion")+
     theme_bw()
 ggsave(paste0(outputpath, "pos_self.png"), width = 6, height = 4, units = "in")
 
-ggplot(df, aes(x = moral_valence, y = neg_self, fill = agency)) + 
+ggplot(df, aes(x = moral_valence, y = neg_self, fill = moral_agency)) + 
     stat_summary(fun.y = mean, geom = "bar",position = "dodge")+
     stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width = 0.90),width=.2)+
     labs(x = "Moral Valence", y = "mean(guilt, shame, embarrassed)", title = "Self-blaming emotion")+
     theme_bw()
 ggsave(paste0(outputpath, "neg_self.png"), width = 6, height = 4, units = "in")
 
-ggplot(df, aes(x = moral_valence, y = pos_other, fill = agency)) + 
+ggplot(df, aes(x = moral_valence, y = pos_other, fill = moral_agency)) + 
     stat_summary(fun.y = mean, geom = "bar",position = "dodge")+
     stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width = 0.90),width=.2)+
     labs(x = "Moral Valence", y = "mean(grateful, elevated)", title = "Other-prasing emotion")+
     theme_bw()
 ggsave(paste0(outputpath, "pos_other.png"), width = 6, height = 4, units = "in")
 
-ggplot(df, aes(x = moral_valence, y = neg_other, fill = agency)) + 
+ggplot(df, aes(x = moral_valence, y = neg_other, fill = moral_agency)) + 
     stat_summary(fun.y = mean, geom = "bar",position = "dodge")+
     stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width = 0.90),width=.2)+
     labs(x = "Moral Valence", y = "mean(angry, disgusted, contemptuous)", title = "Other-blaming emotion")+
@@ -83,13 +87,17 @@ ggplot(df, aes(x = moral_valence, y = neg_other, fill = agency)) +
 ggsave(paste0(outputpath, "neg_other.png"), width = 6, height = 4, units = "in")
 
 # Models for valence and agency and their interaction on the 4 emotions
-ps_va_noint <- lmer(pos_self ~ moral_valence * agency + (1|participant_ID), data = df)
-ps_va_int <- lmer(pos_self ~ moral_valence * agency + (1|participant_ID), data = df)
-pn_va_noint <- lmer(neg_self ~ moral_valence * agency + (1|participant_ID), data = df)
-pn_va_int <- lmer(neg_self ~ moral_valence * agency + (1|participant_ID), data = df)
+ps_va_noint <- lmer(pos_self ~ valence + agency + (1|participant_ID), data = df)
+ps_va_int <- lmer(pos_self ~ valence * agency + (1|participant_ID), data = df)
+pn_va_noint <- lmer(neg_self ~ valence + agency + (1|participant_ID), data = df)
+pn_va_int <- lmer(neg_self ~ valence * agency + (1|participant_ID), data = df)
+po_va_noint <- lmer(pos_other ~ valence + agency + (1|participant_ID), data = df)
+po_va_int <- lmer(pos_other ~ valence * agency + (1|participant_ID), data = df)
+nn_va_noint <- lmer(neg_other ~ valence + agency + (1|participant_ID), data = df)
+nn_va_int <- lmer(neg_other ~ valence * agency + (1|participant_ID), data = df)
 
-stargazer(ps_va_noint, ps_va_int, pn_va_noint, pn_va_int, type = "text", out = paste0(outputpath, "model_valence_4emotion.txt"))
-
+model_valence_4emotion <- list(ps_va_noint, ps_va_int, pn_va_noint, pn_va_int, po_va_noint, po_va_int, nn_va_noint, nn_va_int)
+stargazer(model_valence_4emotion, type = "text", out = paste0(outputpath, "model_valence_4emotion.txt"))
 
 # Models for rightness and agency and OUS and their interaction on the 4 emotions
 ps_ra_ousib_noint <- lmer(pos_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
