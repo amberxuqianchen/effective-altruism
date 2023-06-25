@@ -98,28 +98,53 @@ nn_va_int <- lmer(neg_other ~ valence * agency + (1|participant_ID), data = df)
 
 model_valence_4emotion <- list(ps_va_noint, ps_va_int, pn_va_noint, pn_va_int, po_va_noint, po_va_int, nn_va_noint, nn_va_int)
 stargazer(model_valence_4emotion, type = "text", out = paste0(outputpath, "model_valence_4emotion.txt"))
+# Models for valence and agency and OUS_IB their interaction on the 4 emotions
+ps_va_ousib_noint <- lmer(pos_self ~ valence + agency + OUS_IB + (1|participant_ID), data = df)
+ps_va_ousib_int <- lmer(pos_self ~ valence * agency * OUS_IB + (1|participant_ID), data = df)
+pn_va_ousib_noint <- lmer(neg_self ~ valence + agency + OUS_IB + (1|participant_ID), data = df)
+pn_va_ousib_int <- lmer(neg_self ~ valence * agency * OUS_IB + (1|participant_ID), data = df)
+po_va_ousib_noint <- lmer(pos_other ~ valence + agency + OUS_IB + (1|participant_ID), data = df)
+po_va_ousib_int <- lmer(pos_other ~ valence * agency * OUS_IB + (1|participant_ID), data = df)
+nn_va_ousib_noint <- lmer(neg_other ~ valence + agency + OUS_IB + (1|participant_ID), data = df)
+nn_va_ousib_int <- lmer(neg_other ~ valence * agency * OUS_IB + (1|participant_ID), data = df)
+
+model_valence_4emotion_ousib <- list(ps_va_ousib_noint, ps_va_ousib_int, pn_va_ousib_noint, pn_va_ousib_int, po_va_ousib_noint, po_va_ousib_int, nn_va_ousib_noint, nn_va_ousib_int)
+stargazer(model_valence_4emotion_ousib, type = "text", out = paste0(outputpath, "model_valence_4emotion_ousib.txt"))
+
+# Models for valence and agency and OUS_IH their interaction on the 4 emotions
+ps_va_ousih_noint <- lmer(pos_self ~ valence + agency + OUS_IH + (1|participant_ID), data = df)
+ps_va_ousih_int <- lmer(pos_self ~ valence * agency * OUS_IH + (1|participant_ID), data = df)
+pn_va_ousih_noint <- lmer(neg_self ~ valence + agency + OUS_IH + (1|participant_ID), data = df)
+pn_va_ousih_int <- lmer(neg_self ~ valence * agency * OUS_IH + (1|participant_ID), data = df)
+po_va_ousih_noint <- lmer(pos_other ~ valence + agency + OUS_IH + (1|participant_ID), data = df)
+po_va_ousih_int <- lmer(pos_other ~ valence * agency * OUS_IH + (1|participant_ID), data = df)
+nn_va_ousih_noint <- lmer(neg_other ~ valence + agency + OUS_IH + (1|participant_ID), data = df)
+nn_va_ousih_int <- lmer(neg_other ~ valence * agency * OUS_IH + (1|participant_ID), data = df)
+
+model_valence_4emotion_ousih <- list(ps_va_ousih_noint, ps_va_ousih_int, pn_va_ousih_noint, pn_va_ousih_int, po_va_ousih_noint, po_va_ousih_int, nn_va_ousih_noint, nn_va_ousih_int)
+stargazer(model_valence_4emotion_ousih, type = "text", out = paste0(outputpath, "model_valence_4emotion_ousih.txt"))
 
 # Models for rightness and agency and OUS and their interaction on the 4 emotions
-ps_ra_ousib_noint <- lmer(pos_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
+ps_ra_ousib_noint <- lmer(pos_self ~ rightness + agency + OUS_IB + (1|participant_ID), data = df)
 ps_ra_ousib_int <- lmer(pos_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
-pn_ra_ousib_noint <- lmer(neg_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
+pn_ra_ousib_noint <- lmer(neg_self ~ rightness + agency + OUS_IB + (1|participant_ID), data = df)
 pn_ra_ousib_int <- lmer(neg_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
-po_ra_ousib_noint <- lmer(pos_other ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
+po_ra_ousib_noint <- lmer(pos_other ~ rightness + agency + OUS_IB + (1|participant_ID), data = df)
 po_ra_ousib_int <- lmer(pos_other ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
-nn_ra_ousib_noint <- lmer(neg_other ~ rightness * agency * OUS_IB + (1|participant_ID), data = df) 
+nn_ra_ousib_noint <- lmer(neg_other ~ rightness + agency + OUS_IB + (1|participant_ID), data = df) 
 nn_ra_ousib_int <- lmer(neg_other ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
 
 model4emotion_ousib <- list(ps_ra_ousib_noint, ps_ra_ousib_int, pn_ra_ousib_noint, pn_ra_ousib_int, po_ra_ousib_noint, po_ra_ousib_int, nn_ra_ousib_noint, nn_ra_ousib_int)
 stargazer(model4emotion_ousib, type = "text", out = paste0(outputpath, "model4emotion_ousib.txt"))
 
 # Models for rightness and agency and OUS_IH and their interaction on the 4 emotions
-ps_ra_ousih_noint <- lmer(pos_self ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
+ps_ra_ousih_noint <- lmer(pos_self ~ rightness + agency + OUS_IH + (1|participant_ID), data = df)
 ps_ra_ousih_int <- lmer(pos_self ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
-pn_ra_ousih_noint <- lmer(neg_self ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
+pn_ra_ousih_noint <- lmer(neg_self ~ rightness + agency + OUS_IH + (1|participant_ID), data = df)
 pn_ra_ousih_int <- lmer(neg_self ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
-po_ra_ousih_noint <- lmer(pos_other ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
+po_ra_ousih_noint <- lmer(pos_other ~ rightness + agency + OUS_IH + (1|participant_ID), data = df)
 po_ra_ousih_int <- lmer(pos_other ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
-nn_ra_ousih_noint <- lmer(neg_other ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
+nn_ra_ousih_noint <- lmer(neg_other ~ rightness + agency + OUS_IH + (1|participant_ID), data = df)
 nn_ra_ousih_int <- lmer(neg_other ~ rightness * agency * OUS_IH + (1|participant_ID), data = df)
 
 model4emotion_ousih <- list(ps_ra_ousih_noint, ps_ra_ousih_int, pn_ra_ousih_noint, pn_ra_ousih_int, po_ra_ousih_noint, po_ra_ousih_int, nn_ra_ousih_noint, nn_ra_ousih_int)
