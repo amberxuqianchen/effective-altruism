@@ -29,6 +29,7 @@ df$rightness <- df$moraljudge
 df$pos_self <- df$proud
 # generate pos_other as the mean of grateful and elevated
 df$pos_other <- (df$grateful + df$elevated)/2
+
 # self-blaming (guilt, shame, embarrass), other-blaming (anger, disgust,contempt)
 df$neg_self <- (df$guilt + df$shameful + df$embarrassed)/3
 df$neg_other <- (df$angry + df$disgusted + df$contemptuous)/3
@@ -46,11 +47,13 @@ nn_ra_int <- lmer(neg_other ~ rightness * agency + (1|participant_ID), data = df
 model4emotion <- list(ps_ra_noint, ps_ra_int, pn_ra_noint, pn_ra_int, po_ra_noint, po_ra_int, nn_ra_noint, nn_ra_int) 
 stargazer(model4emotion, type = "text", out = paste0(outputpath, "model4emotion.txt"))
 
-# plot the interaction
+
 df$moral_agency <- as.factor(df$moral_agency)
 levels(df$moral_agency) <- c("Self", "Other")
 df$moral_valence <- as.factor(df$moral_valence)
 levels(df$moral_valence) <- c("Moral", "Immoral")
+
+# plot the interaction
 ggplot(df, aes(x = moral_valence, y = pos_self, fill = agency)) + 
     stat_summary(fun.y = mean, geom = "bar",position = "dodge")+
     stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width = 0.90),width=.2)+
@@ -78,6 +81,15 @@ ggplot(df, aes(x = moral_valence, y = neg_other, fill = agency)) +
     labs(x = "Moral Valence", y = "mean(angry, disgusted, contemptuous)", title = "Other-blaming emotion")+
     theme_bw()
 ggsave(paste0(outputpath, "neg_other.png"), width = 6, height = 4, units = "in")
+
+# Models for valence and agency and their interaction on the 4 emotions
+ps_va_noint <- lmer(pos_self ~ moral_valence * agency + (1|participant_ID), data = df)
+ps_va_int <- lmer(pos_self ~ moral_valence * agency + (1|participant_ID), data = df)
+pn_va_noint <- lmer(neg_self ~ moral_valence * agency + (1|participant_ID), data = df)
+pn_va_int <- lmer(neg_self ~ moral_valence * agency + (1|participant_ID), data = df)
+
+stargazer(ps_va_noint, ps_va_int, pn_va_noint, pn_va_int, type = "text", out = paste0(outputpath, "model_valence_4emotion.txt"))
+
 
 # Models for rightness and agency and OUS and their interaction on the 4 emotions
 ps_ra_ousib_noint <- lmer(pos_self ~ rightness * agency * OUS_IB + (1|participant_ID), data = df)
