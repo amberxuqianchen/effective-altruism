@@ -7,8 +7,6 @@ dfnoneutral <- df[df$moral_valence != 0,]
 # make neutral the reference category in agency
 df$agency <- as.factor(df$moral_agency)
 df$agency <- relevel(df$agency, ref = 2)
-
-
 # summary
 
 ############################################
@@ -35,8 +33,6 @@ model2 <- lmer(neg ~ OUS_IB * valence * agency + (1|participant_ID), data = df)
 model3 <- lmer(neg ~ OUS_IH * valence * agency + (1|participant_ID), data = df)
 # Print out the summary statistics of the fit
 stargazer(model1,model2,model3, type = "text")
-
-
 
 # pos
 model11 <- lmer(pos ~ OUS_overall + valence + agency + (1|participant_ID), data = dfnoneutral)
@@ -75,8 +71,6 @@ model44 <- lmer(neg ~ OUS_IH * agency * moral + (1|participant_ID), data = df)
 stargazer(model1,model11,model2,model22, type = "text")
 stargazer(model3,model33,model4,model44, type = "text")
 
-
-
 library(nnet)
 # Define and fit the model
 model <- multinom(moral_valence ~ OUS_IB, data = df)
@@ -90,8 +84,6 @@ stargazer(model, type = "text")
 dft <- read.csv('/home/local/PSYCH-ADS/xuqian_chen/Github/effective-altruism/2_pipeline/out/df_discount.csv')
 dfself <- read.csv('/home/local/PSYCH-ADS/xuqian_chen/Github/effective-altruism/2_pipeline/out/dfself.csv')
 dfother <- read.csv('/home/local/PSYCH-ADS/xuqian_chen/Github/effective-altruism/2_pipeline/out/dfother.csv')
-
-
 
 summary(lm(corr_coeff ~ OUS_IB, data = dft))
 summary(lm(corr_coeff ~ OUS_IH, data = dft))
