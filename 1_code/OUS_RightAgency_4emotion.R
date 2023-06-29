@@ -44,13 +44,13 @@ df$neg_self <- (df$guilt + df$shameful + df$embarrassed)/3
 df$neg_other <- (df$angry + df$disgusted + df$contemptuous)/3
 
 # Models for rightness and agency and their interaction on the 4 emotions
-ps_ra_noint <- lmer(pos_self ~ rightness * agency + (1|participant_ID), data = df)
+ps_ra_noint <- lmer(pos_self ~ rightness + agency + (1|participant_ID), data = df)
 ps_ra_int <- lmer(pos_self ~ rightness * agency + (1|participant_ID), data = df)
-pn_ra_noint <- lmer(neg_self ~ rightness * agency + (1|participant_ID), data = df)
+pn_ra_noint <- lmer(neg_self ~ rightness + agency + (1|participant_ID), data = df)
 pn_ra_int <- lmer(neg_self ~ rightness * agency + (1|participant_ID), data = df)
 po_ra_noint <- lmer(pos_other ~ rightness * agency + (1|participant_ID), data = df)
 po_ra_int <- lmer(pos_other ~ rightness * agency + (1|participant_ID), data = df)
-nn_ra_noint <- lmer(neg_other ~ rightness * agency + (1|participant_ID), data = df)
+nn_ra_noint <- lmer(neg_other ~ rightness + agency + (1|participant_ID), data = df)
 nn_ra_int <- lmer(neg_other ~ rightness * agency + (1|participant_ID), data = df)
 
 model4emotion <- list(ps_ra_noint, ps_ra_int, pn_ra_noint, pn_ra_int, po_ra_noint, po_ra_int, nn_ra_noint, nn_ra_int) 
