@@ -6,15 +6,16 @@ This project investigates the relationship between utilitarian moral judgments a
 ### Research Rationale
 Previous studies have suggested that utilitarian judgments may be associated with a greater reliance on reasoning rather than emotional responses. Damage to the prefrontal cortex, an area related to social emotions, has been shown to increase utilitarian moral judgments. However, emotions can also play a role in moral judgments by biasing social cognition. This research aims to explore the interplay between utilitarian judgment, emotions, and moral decision-making.
 
-### Participants and Methodology
+### Methodology
+#### Participants
 The study involves undergraduate participants divided into two groups: Effective Altruism (EA) group and non-EA group. The EA group consists of 81 participants, while the non-EA group consists of 92 participants. The research design utilizes Ecological Momentary Assessment (EMA) to capture participants' moral experiences and emotional responses in real-time. Participants are asked to provide responses over a 7-day period, with multiple assessments per day.
 
-### Key Variables
+#### Key Variables
 - Oxford Utilitarianism Scale (OUS): Participants' scores on the scale are used to measure their levels of impartial beneficence (IB) and instrumental harm (IH), which reflect prioritization of the greater good over personal or group loyalty and willingness to cause harm for a greater good, respectively.
 - Agency: Participants' perception of agency, distinguishing between self and other agency.
 - Valence: The emotional valence associated with moral judgments, including self-blaming emotions (guilt, shame), other-blaming emotions (anger, disgust, contempt), self-praising emotions (pride), and other-praising emotions (gratitude, elevation).
 
-### Analysis and Findings
+#### Analysis
 The project involves several analyses and model replications. The initial steps include testing the agency * valence interaction as a sanity check and examining the rightness * agency model on Guilt and Shame Proneness (GASP) similarity. The GASP similarity serves as a measure of self-blaming emotions. Correlations between guilt/shame and OUS_IH/IB in the self-immoral cell are explored, considering the different relationships with the other three cells.
 
 Additionally, the project aims to replicate models for specific emotional categories: self-blaming emotions (guilt, shame, embarrassment), other-blaming emotions (anger, disgust, contempt), self-praising emotion (pride), and other-praising emotions (gratitude, elevation). The agency * valence interaction is checked again as a sanity check.
